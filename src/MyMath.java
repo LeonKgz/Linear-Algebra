@@ -17,6 +17,9 @@ public class MyMath {
         return (int) Math.log10(val) + 1;
     }
 
+    public static boolean almostZero(Double dble){
+        return (dble) < Math.pow(10, -10);
+    }
 
 
 }

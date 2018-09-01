@@ -1,6 +1,3 @@
-import com.sun.org.apache.xerces.internal.impl.xs.SchemaNamespaceSupport;
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,14 +11,14 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         Matrix matrix = getMatrix();
-
         do {
             System.out.println("Pick from the menu: \n");
             System.out.println("1) Get an element\n" +
                                "2) Calculate the determinant\n" +
                                "3) Display the matrix\n" +
                                "4) Switch to a new matrix\n" +
-                               "5) Exit\n" );
+                               "5) Gaussian Elimination\n" +
+                               "6) Exit\n" );
             int option = sc.nextInt();
 
             switch (option){
@@ -41,6 +38,9 @@ public class Main {
                     matrix = getMatrix();
                     break;
                 case 5:
+                    getAGaussianElimination(matrix);
+                    break;
+                case 6:
                     System.exit(0);
                     break;
             }
@@ -71,9 +71,9 @@ public class Main {
 
         int rows = lineSc.nextInt();
         int cols = lineSc.nextInt();
-        List<Integer> list = new ArrayList<>();
+        List<Double> list = new ArrayList<>();
         while (lineSc.hasNextInt()){
-            list.add(lineSc.nextInt());
+            list.add(lineSc.nextDouble());
         }
 
         Matrix retMatrix =  new Matrix(list, rows, cols);
@@ -99,6 +99,12 @@ public class Main {
         System.out.println("The determinant of your matrix is: " + matrix.getDeterminant());
         System.out.print(theLine);
 
+    }
+
+    private static void getAGaussianElimination(Matrix matrix){
+        System.out.print(theLine);
+        System.out.println("Performing Gaussian Elimination: \n\n\n" + matrix.gaussElimination());
+        System.out.print(theLine);
     }
 
     private static void leChoix(Scanner sc, Matrix matrix){
