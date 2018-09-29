@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Matrix {
@@ -6,11 +7,11 @@ public class Matrix {
     private final int rows;
     private final int columns;
     private int padding = 0;
-    private int decimalPlaces = 5;
+    private int decimalPlaces;
     private List<Double> elements = new ArrayList<>();
     private List<List<Double>> matrix = new ArrayList<>();
 
-    public Matrix(List<Double> list, int rows, int columns) {
+    public Matrix(List<Double> list, int rows, int columns, int decimals) {
         assert (list.size() == rows * columns) : "Incompatible sizes!";
 
         this.rows = rows;
@@ -30,8 +31,9 @@ public class Matrix {
             }
             matrix.add(i, temp);
         }
+        this.decimalPlaces = decimals;
 
-        padding = absMax + 1 + (1 + decimalPlaces); // extra space
+        padding = absMax + 1 + (1 + decimals); // extra space
     }
 
     public Double getElem(int row, int column){
@@ -46,6 +48,7 @@ public class Matrix {
 
     @Override
     public String toString(){
+        //padding = 0;
         String ret = "   " + String.format("%" + (MyMath.getSignificants(rows) + 1) + "s", "") + "  ";
         for (int i = 1; i < columns + 1; i++) {
             ret += String.format("%" + padding + "d ", i);
@@ -116,11 +119,11 @@ public class Matrix {
                 }
             }
         }
-        return new Matrix(smallerList, smallerRow, smallerColumn);
+        return new Matrix(smallerList, smallerRow, smallerColumn, decimalPlaces);
     }
 
     public Matrix copyThis(){
-        Matrix copy = new Matrix(elements, rows, columns);
+        Matrix copy = new Matrix(elements, rows, columns, decimalPlaces);
         return copy;
     }
 
@@ -159,10 +162,10 @@ public class Matrix {
     }
 
     private int findNextRowWithLargestAbsoluteValueInCol(int pivotColumn){
-        int counter = 0;
+        int counter = pivotColumn;
         Double curr = matrix.get(counter).get(pivotColumn);
 
-        for (int i = 1; i < rows; i++) {
+        for (int i = pivotColumn; i < rows; i++) {
             if (matrix.get(i).get(pivotColumn) > curr){
                 counter = i;
             }
@@ -178,19 +181,74 @@ public class Matrix {
         matrix.set(n2, copyOfn1);
     }
 
+    public Matrix add(Matrix another){
+        assert (this.rows == another.rows && this.columns == another.columns) :
+                "Trying to add incompatible matrices (rows&columns)!";
+        List<Double> newList = new ArrayList<>();
+        for (int i = 0; i < this.rows; i++) {
+            for (int j = 0; j < this.columns; j++) {
+                newList.add(this.matrix.get(i).get(j) + another.matrix.get(i).get(j));
+            }
+        }
+        return new Matrix(newList, this.rows, this.columns, this.decimalPlaces);
+    }
+
+    public Matrix coarseMultiply(Matrix another){
+        assert (another.rows == this.columns) : "Trying to multiply incompatible matrices (rows&columns)!";
+        List<Double> newList = new ArrayList<>();
+        for (int i = 0; i < this.rows; i++) {
+            for (int j = 0; j < another.columns; j++) {
+                Double temp = 0.0;
+                for (int k = 0; k < this.columns; k++) {
+                    temp += this.matrix.get(i).get(k) * another.matrix.get(k).get(j);
+                }
+                newList.add(temp);
+            }
+        }
+        return new Matrix(newList, this.rows, another.columns, this.decimalPlaces);
+    }
+
+/*
+    public Matrix strassenMultiply(Matrix another){
+        assert (another.rows == this.columns): "Trying to multiply incompatible matrices (rows&columns)!";
+        assert (this.rows == this.columns): "Not square matrix!";
+        if (this.rows == 2){
+
+        } else (){
+
+        }
+    }*/
+    public static Matrix composeFromList(List<Matrix> matrices){
+        List<Double> newList = new ArrayList<>();
+        int numOfMatrices = matrices.size();
+        double check = Math.sqrt(numOfMatrices);
+        assert (check - Math.floor(check) == 0);
+        if (! (check - Math.floor(check) == 0)){
+            System.exit(1);                                          //??????   АЛЛО
+        }
+        for (int i = 0; i < numOfMatrices; i++) {
+           List<Double> currElements = matrices.get(i).elements;
+           for (int j = 0; j < currElements.size(); j++) {
+               int smallDimensions = matrices.get(i).columns;
+               newList.set(getTheComposedIndex(i, j, smallDimensions), currElements.get(j));
+           }
+        }
+
+        int dimensions = ((int) Math.sqrt(matrices.size())) * matrices.get(0).rows;
+        return new Matrix (newList, dimensions, dimensions, matrices.get(0).decimalPlaces);
+    }
+
+    private static int getTheComposedIndex(int i, int j, int smallerDim){
+        if (i == 0){
+
+        } else {
+            int offestOne = ((int) Math.pow(smallerDim, 2)) * (i - 1) + smallerDim ;
+            int offsetTwo = (smallerDim * (j / smallerDim)) + j;
+        }
+
+        return -1;
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
