@@ -219,36 +219,24 @@ public class Matrix {
         }
     }*/
     public static Matrix composeFromList(List<Matrix> matrices){
+        //DOESNT WORK FOR ONE BY ONE MATRICES
+        //ONLY WORKS FOR PERFECT SQUARES (4 x 2x2) (9 x 3x3) (16 x 4x4)
         List<Double> newList = new ArrayList<>();
         int numOfMatrices = matrices.size();
-        double check = Math.sqrt(numOfMatrices);
-        assert (check - Math.floor(check) == 0);
-        if (! (check - Math.floor(check) == 0)){
+        double dimensionsOfComposedMatrix = Math.sqrt(numOfMatrices);
+        boolean isItSquare = dimensionsOfComposedMatrix- Math.floor(dimensionsOfComposedMatrix) == 0;
+        assert (isItSquare);
+        if (! isItSquare){
             System.exit(1);                                          //??????   АЛЛО
         }
-        for (int i = 0; i < numOfMatrices; i++) {
-           List<Double> currElements = matrices.get(i).elements;
-           for (int j = 0; j < currElements.size(); j++) {
-               int smallDimensions = matrices.get(i).columns;
-               newList.set(getTheComposedIndex(i, j, smallDimensions), currElements.get(j));
-           }
+        int smallDimensions = matrices.get(0).columns;
+        int bigDimensions   = (int) Math.pow(smallDimensions, 2);
+        for (int k = 0; k < bigDimensions; k++) {
+            for (int l = 0; l < dimensionsOfComposedMatrix; l++) {
+                newList.addAll(matrices.get(l + ((int) dimensionsOfComposedMatrix) *(k / smallDimensions)).matrix.get(k % smallDimensions));
+            }
         }
-
         int dimensions = ((int) Math.sqrt(matrices.size())) * matrices.get(0).rows;
         return new Matrix (newList, dimensions, dimensions, matrices.get(0).decimalPlaces);
     }
-
-    private static int getTheComposedIndex(int i, int j, int smallerDim){
-        if (i == 0){
-
-        } else {
-            int offestOne = ((int) Math.pow(smallerDim, 2)) * (i - 1) + smallerDim ;
-            int offsetTwo = (smallerDim * (j / smallerDim)) + j;
-        }
-
-        return -1;
-    }
-
 }
-
-

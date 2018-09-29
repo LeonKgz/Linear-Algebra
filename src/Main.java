@@ -89,15 +89,19 @@ public class Main {
                     }
                     break;
                 case 8:
-                    Matrix m1 = getMatrix();
-                    Matrix m2 = getMatrix();
-                    Matrix m3 = getMatrix();
-                    Matrix m4 = getMatrix();
+                    System.out.println("What is your preferred precision (number of decimal places) ?");
+                    int decimaPlaces = sc.nextInt();
+                    System.out.println("Enter the number of rows and columns:");
+                    sc = new Scanner(System.in);
+                    String line = sc.nextLine();
+                    Scanner lineSc = new Scanner(line);
+                    int rows = lineSc.nextInt();
+                    int cols = lineSc.nextInt();
                     List<Matrix> list = new ArrayList<>();
-                    list.add(m1);
-                    list.add(m2);
-                    list.add(m3);
-                    list.add(m4);
+                    for (int i = 0; i < rows * cols; i++) {
+                        Matrix m = getAComposedMatrix(decimaPlaces, rows, cols);
+                        list.add(m);
+                    }
                     Matrix compose = Matrix.composeFromList(list);
                     System.out.println("Your composed matrix is:\n" + compose);
                     break;
@@ -142,6 +146,20 @@ public class Main {
        // retMatrix.setDecimalPLaces(decimalPlaces);
         System.out.println("\nYour matrix: \n\n" + retMatrix);
 
+        return retMatrix;
+    }
+
+    private static Matrix getAComposedMatrix(int decimalPlaces, int rows, int cols){
+        System.out.println("Enter your elements in order:");
+        Scanner sc = new Scanner(System.in);
+        String line = sc.nextLine();
+        Scanner lineSc = new Scanner(line);
+        List<Double> list = new ArrayList<>();
+        while (lineSc.hasNextInt()){
+            list.add(lineSc.nextDouble());
+        }
+        Matrix retMatrix =  new Matrix(list, rows, cols, decimalPlaces);
+        System.out.println("\nYour matrix: \n\n" + retMatrix);
         return retMatrix;
     }
 

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9be4266-e87a-47c0-9c61-0705f4be6566" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linear Algebra/Main.class" afterPath="$PROJECT_DIR$/out/production/Linear Algebra/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linear Algebra/Matrix.class" afterPath="$PROJECT_DIR$/out/production/Linear Algebra/Matrix.class" />
+      <change beforePath="$PROJECT_DIR$/src/Dummy.java" afterPath="$PROJECT_DIR$/src/Dummy.java" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change beforePath="$PROJECT_DIR$/src/Matrix.java" afterPath="$PROJECT_DIR$/src/Matrix.java" />
     </list>
@@ -21,10 +19,9 @@
       <file leaf-file-name="Matrix.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Matrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="245" column="31" lean-forward="false" selection-start-line="245" selection-start-column="31" selection-end-line="245" selection-end-column="31" />
+            <state relative-caret-position="128">
+              <caret line="222" column="41" lean-forward="false" selection-start-line="222" selection-start-column="41" selection-end-line="222" selection-end-column="41" />
               <folding>
-                <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
                 <element signature="method#copyList#0;class#Matrix#0" expanded="false" />
                 <element signature="method#toString#0;class#Matrix#0" expanded="false" />
                 <element signature="method#getDeterminant#0;class#Matrix#0" expanded="false" />
@@ -36,6 +33,8 @@
                 <element signature="method#reduceRow#0;class#Matrix#0" expanded="false" />
                 <element signature="method#findNextRowWithLargestAbsoluteValueInCol#0;class#Matrix#0" expanded="false" />
                 <element signature="method#swapRows#0;class#Matrix#0" expanded="false" />
+                <element signature="method#add#0;class#Matrix#0" expanded="false" />
+                <element signature="method#coarseMultiply#0;class#Matrix#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -44,8 +43,8 @@
       <file leaf-file-name="Dummy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dummy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            <state relative-caret-position="224">
+              <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -54,7 +53,7 @@
       <file leaf-file-name="MyMath.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyMath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
+            <state relative-caret-position="315">
               <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
               <folding>
                 <element signature="e#503#504#0" expanded="true" />
@@ -67,10 +66,12 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3072">
-              <caret line="101" column="77" lean-forward="false" selection-start-line="101" selection-start-column="77" selection-end-line="101" selection-end-column="77" />
+            <state relative-caret-position="352">
+              <caret line="97" column="47" lean-forward="false" selection-start-line="97" selection-start-column="47" selection-end-line="97" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+                <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
                 <element signature="method#leChoix#0;class#Main#0" expanded="false" />
               </folding>
             </state>
@@ -294,12 +295,12 @@
       <workItem from="1537275780762" duration="2023000" />
       <workItem from="1537294930302" duration="5139000" />
       <workItem from="1537644840715" duration="10309000" />
-      <workItem from="1538228451384" duration="16000" />
+      <workItem from="1538228451384" duration="11036000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36182000" />
+    <option name="totallyTimeSpent" value="47202000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -307,17 +308,18 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40827146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07317073" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1015625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1015625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -329,7 +331,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -352,7 +353,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
             <element signature="method#copyList#0;class#Matrix#0" expanded="false" />
             <element signature="method#toString#0;class#Matrix#0" expanded="false" />
             <element signature="method#getDeterminant#0;class#Matrix#0" expanded="false" />
@@ -364,6 +364,8 @@
             <element signature="method#reduceRow#0;class#Matrix#0" expanded="false" />
             <element signature="method#findNextRowWithLargestAbsoluteValueInCol#0;class#Matrix#0" expanded="false" />
             <element signature="method#swapRows#0;class#Matrix#0" expanded="false" />
+            <element signature="method#add#0;class#Matrix#0" expanded="false" />
+            <element signature="method#coarseMultiply#0;class#Matrix#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -393,6 +395,8 @@
           <caret line="101" column="77" lean-forward="false" selection-start-line="101" selection-start-column="77" selection-end-line="101" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
             <element signature="method#leChoix#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -403,7 +407,6 @@
         <state relative-caret-position="625">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
             <element signature="method#copyList#0;class#Matrix#0" expanded="false" />
             <element signature="method#toString#0;class#Matrix#0" expanded="false" />
             <element signature="method#getDeterminant#0;class#Matrix#0" expanded="false" />
@@ -415,6 +418,8 @@
             <element signature="method#reduceRow#0;class#Matrix#0" expanded="false" />
             <element signature="method#findNextRowWithLargestAbsoluteValueInCol#0;class#Matrix#0" expanded="false" />
             <element signature="method#swapRows#0;class#Matrix#0" expanded="false" />
+            <element signature="method#add#0;class#Matrix#0" expanded="false" />
+            <element signature="method#coarseMultiply#0;class#Matrix#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -436,6 +441,8 @@
           <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
             <element signature="method#leChoix#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -446,7 +453,6 @@
         <state relative-caret-position="2075">
           <caret line="130" column="13" lean-forward="false" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
           <folding>
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
             <element signature="method#copyList#0;class#Matrix#0" expanded="false" />
             <element signature="method#toString#0;class#Matrix#0" expanded="false" />
             <element signature="method#getDeterminant#0;class#Matrix#0" expanded="false" />
@@ -458,6 +464,8 @@
             <element signature="method#reduceRow#0;class#Matrix#0" expanded="false" />
             <element signature="method#findNextRowWithLargestAbsoluteValueInCol#0;class#Matrix#0" expanded="false" />
             <element signature="method#swapRows#0;class#Matrix#0" expanded="false" />
+            <element signature="method#add#0;class#Matrix#0" expanded="false" />
+            <element signature="method#coarseMultiply#0;class#Matrix#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -486,6 +494,8 @@
           <caret line="81" column="2" lean-forward="false" selection-start-line="81" selection-start-column="2" selection-end-line="81" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
             <element signature="method#leChoix#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -496,7 +506,6 @@
         <state relative-caret-position="2075">
           <caret line="130" column="13" lean-forward="false" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
           <folding>
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
             <element signature="method#copyList#0;class#Matrix#0" expanded="false" />
             <element signature="method#toString#0;class#Matrix#0" expanded="false" />
             <element signature="method#getDeterminant#0;class#Matrix#0" expanded="false" />
@@ -508,6 +517,8 @@
             <element signature="method#reduceRow#0;class#Matrix#0" expanded="false" />
             <element signature="method#findNextRowWithLargestAbsoluteValueInCol#0;class#Matrix#0" expanded="false" />
             <element signature="method#swapRows#0;class#Matrix#0" expanded="false" />
+            <element signature="method#add#0;class#Matrix#0" expanded="false" />
+            <element signature="method#coarseMultiply#0;class#Matrix#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -536,6 +547,8 @@
           <caret line="68" column="2" lean-forward="false" selection-start-line="68" selection-start-column="2" selection-end-line="68" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
             <element signature="method#leChoix#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -546,7 +559,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
             <element signature="method#copyList#0;class#Matrix#0" expanded="false" />
             <element signature="method#toString#0;class#Matrix#0" expanded="false" />
             <element signature="method#getDeterminant#0;class#Matrix#0" expanded="false" />
@@ -558,6 +570,8 @@
             <element signature="method#reduceRow#0;class#Matrix#0" expanded="false" />
             <element signature="method#findNextRowWithLargestAbsoluteValueInCol#0;class#Matrix#0" expanded="false" />
             <element signature="method#swapRows#0;class#Matrix#0" expanded="false" />
+            <element signature="method#add#0;class#Matrix#0" expanded="false" />
+            <element signature="method#coarseMultiply#0;class#Matrix#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -586,6 +600,8 @@
           <caret line="107" column="5" lean-forward="false" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
             <element signature="method#leChoix#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -596,7 +612,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
             <element signature="method#copyList#0;class#Matrix#0" expanded="false" />
             <element signature="method#toString#0;class#Matrix#0" expanded="false" />
             <element signature="method#getDeterminant#0;class#Matrix#0" expanded="false" />
@@ -608,6 +623,8 @@
             <element signature="method#reduceRow#0;class#Matrix#0" expanded="false" />
             <element signature="method#findNextRowWithLargestAbsoluteValueInCol#0;class#Matrix#0" expanded="false" />
             <element signature="method#swapRows#0;class#Matrix#0" expanded="false" />
+            <element signature="method#add#0;class#Matrix#0" expanded="false" />
+            <element signature="method#coarseMultiply#0;class#Matrix#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -636,6 +653,8 @@
           <caret line="107" column="5" lean-forward="true" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
             <element signature="method#leChoix#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -646,7 +665,6 @@
         <state relative-caret-position="2175">
           <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding>
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
             <element signature="method#copyList#0;class#Matrix#0" expanded="false" />
             <element signature="method#toString#0;class#Matrix#0" expanded="false" />
             <element signature="method#getDeterminant#0;class#Matrix#0" expanded="false" />
@@ -658,6 +676,8 @@
             <element signature="method#reduceRow#0;class#Matrix#0" expanded="false" />
             <element signature="method#findNextRowWithLargestAbsoluteValueInCol#0;class#Matrix#0" expanded="false" />
             <element signature="method#swapRows#0;class#Matrix#0" expanded="false" />
+            <element signature="method#add#0;class#Matrix#0" expanded="false" />
+            <element signature="method#coarseMultiply#0;class#Matrix#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -679,6 +699,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
             <element signature="method#leChoix#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -689,7 +711,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
             <element signature="method#copyList#0;class#Matrix#0" expanded="false" />
             <element signature="method#toString#0;class#Matrix#0" expanded="false" />
             <element signature="method#getDeterminant#0;class#Matrix#0" expanded="false" />
@@ -701,6 +722,8 @@
             <element signature="method#reduceRow#0;class#Matrix#0" expanded="false" />
             <element signature="method#findNextRowWithLargestAbsoluteValueInCol#0;class#Matrix#0" expanded="false" />
             <element signature="method#swapRows#0;class#Matrix#0" expanded="false" />
+            <element signature="method#add#0;class#Matrix#0" expanded="false" />
+            <element signature="method#coarseMultiply#0;class#Matrix#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -722,6 +745,8 @@
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
             <element signature="method#leChoix#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -732,7 +757,6 @@
         <state relative-caret-position="22">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
             <element signature="method#copyList#0;class#Matrix#0" expanded="false" />
             <element signature="method#toString#0;class#Matrix#0" expanded="false" />
             <element signature="method#getDeterminant#0;class#Matrix#0" expanded="false" />
@@ -744,6 +768,8 @@
             <element signature="method#reduceRow#0;class#Matrix#0" expanded="false" />
             <element signature="method#findNextRowWithLargestAbsoluteValueInCol#0;class#Matrix#0" expanded="false" />
             <element signature="method#swapRows#0;class#Matrix#0" expanded="false" />
+            <element signature="method#add#0;class#Matrix#0" expanded="false" />
+            <element signature="method#coarseMultiply#0;class#Matrix#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -754,6 +780,8 @@
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
             <element signature="method#leChoix#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -771,7 +799,6 @@
         <state relative-caret-position="22">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
             <element signature="method#copyList#0;class#Matrix#0" expanded="false" />
             <element signature="method#toString#0;class#Matrix#0" expanded="false" />
             <element signature="method#getDeterminant#0;class#Matrix#0" expanded="false" />
@@ -783,6 +810,8 @@
             <element signature="method#reduceRow#0;class#Matrix#0" expanded="false" />
             <element signature="method#findNextRowWithLargestAbsoluteValueInCol#0;class#Matrix#0" expanded="false" />
             <element signature="method#swapRows#0;class#Matrix#0" expanded="false" />
+            <element signature="method#add#0;class#Matrix#0" expanded="false" />
+            <element signature="method#coarseMultiply#0;class#Matrix#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -800,6 +829,8 @@
           <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
             <element signature="method#leChoix#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -810,7 +841,6 @@
         <state relative-caret-position="22">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
             <element signature="method#copyList#0;class#Matrix#0" expanded="false" />
             <element signature="method#toString#0;class#Matrix#0" expanded="false" />
             <element signature="method#getDeterminant#0;class#Matrix#0" expanded="false" />
@@ -822,6 +852,8 @@
             <element signature="method#reduceRow#0;class#Matrix#0" expanded="false" />
             <element signature="method#findNextRowWithLargestAbsoluteValueInCol#0;class#Matrix#0" expanded="false" />
             <element signature="method#swapRows#0;class#Matrix#0" expanded="false" />
+            <element signature="method#add#0;class#Matrix#0" expanded="false" />
+            <element signature="method#coarseMultiply#0;class#Matrix#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -839,6 +871,8 @@
           <caret line="10" column="115" lean-forward="false" selection-start-line="10" selection-start-column="115" selection-end-line="10" selection-end-column="115" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
             <element signature="method#leChoix#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -864,6 +898,8 @@
           <caret line="66" column="24" lean-forward="false" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
             <element signature="method#leChoix#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -882,6 +918,8 @@
           <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
             <element signature="method#leChoix#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -895,28 +933,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ComposeType.java" />
-    <entry file="file://$PROJECT_DIR$/src/Dummy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3072">
-          <caret line="101" column="77" lean-forward="false" selection-start-line="101" selection-start-column="77" selection-end-line="101" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#leChoix#0;class#Main#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MyMath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
+        <state relative-caret-position="315">
           <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding>
             <element signature="e#503#504#0" expanded="true" />
@@ -925,12 +944,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dummy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="97" column="47" lean-forward="false" selection-start-line="97" selection-start-column="47" selection-end-line="97" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addToAMatrix#0;class#Main#0" expanded="false" />
+            <element signature="method#coarseMultiplyTwoMatrices#0;class#Main#0" expanded="false" />
+            <element signature="method#leChoix#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="245" column="31" lean-forward="false" selection-start-line="245" selection-start-column="31" selection-end-line="245" selection-end-column="31" />
+        <state relative-caret-position="128">
+          <caret line="222" column="41" lean-forward="false" selection-start-line="222" selection-start-column="41" selection-end-line="222" selection-end-column="41" />
           <folding>
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
             <element signature="method#copyList#0;class#Matrix#0" expanded="false" />
             <element signature="method#toString#0;class#Matrix#0" expanded="false" />
             <element signature="method#getDeterminant#0;class#Matrix#0" expanded="false" />
@@ -942,6 +981,8 @@
             <element signature="method#reduceRow#0;class#Matrix#0" expanded="false" />
             <element signature="method#findNextRowWithLargestAbsoluteValueInCol#0;class#Matrix#0" expanded="false" />
             <element signature="method#swapRows#0;class#Matrix#0" expanded="false" />
+            <element signature="method#add#0;class#Matrix#0" expanded="false" />
+            <element signature="method#coarseMultiply#0;class#Matrix#0" expanded="false" />
           </folding>
         </state>
       </provider>
